@@ -13,6 +13,13 @@ values
 ('schema.sql', 'the path'),
 ('conn.js', 'the path');
 
+insert into methods
+(name, code)
+VALUES
+('users model', 'the path'),
+('users controller', 'the path'),
+('users route', 'the path');
+
 insert into favorites
 (user_id, framework_id, method_id)
 values
@@ -20,10 +27,3 @@ values
 (3, 1, 3),
 (2, 3, 3),
 (4, 2, 1);
-
-insert into methods
-(name, code)
-VALUES
-('users model', 'the path'),
-('users controller', 'the path'),
-('users route', 'the path');
