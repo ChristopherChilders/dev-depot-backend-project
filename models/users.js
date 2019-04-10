@@ -24,7 +24,19 @@ class Users {
         return db.result('delete from users where id=$1', [id]);
     }
     static getAll() {
-        
+        return db.any(`select * from users`)
+        .then((arrayOfUsers) => {
+            return arrayOfUsers.map((userData) => {
+                const aUser = new User (
+                    userData.id,
+                    userData.first_name,
+                    userData.last_name,
+                    userData.email,
+                    userData.password
+                );
+                return aUser;
+            })
+        })
     }
     static getById(id){
         return db.one(`select * from users where id=${id}`)
@@ -37,9 +49,19 @@ class Users {
                 userData.username,
                 userData.password
             );
+            return userInstance;
         })
         .catch(()=>{
             return null;
         })
+    }
+    save() {
+        return db.result(`
+        update users set
+        first_name='${this.firstName}',
+        last_name='${this.lastName}',
+        email='${this.email}',
+        username='${this.username}',
+        password='${this.password}'`)
     }
 }
