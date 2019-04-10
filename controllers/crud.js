@@ -5,6 +5,11 @@ async function addUser (req, res) {
     res.json(`The added user was given the id ${addUser}`);
 }
 
+async function deleteUser (req, res) {
+    const { id } = req.params;
+    await User.delete(id);
+    console.log(`user with id: ${id} was deleted`);
+}
 async function retrieveOne(req, res) {
     const theUser = await User.getById(req.params.id);
     res.render('users', {
@@ -14,7 +19,21 @@ async function retrieveOne(req, res) {
     });
 }
 
+async function retrieveAllUsers (req, res) {
+    const allUsers = await User.getAll();
+    console.log(allUsers);
+    res.json(allUsers);
+}
+
+function updateUser (req, res) {
+    res.json({message: "user has been updates"});
+}
+
 module.exports = {
     addUser,
-    retrieveOne
+    deleteUser,
+    retrieveOne,
+    retrieveAllUsers,
+    updateUser
+
 };
