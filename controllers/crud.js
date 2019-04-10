@@ -5,6 +5,16 @@ async function addUser (req, res) {
     res.json(`The added user was given the id ${addUser}`);
 }
 
+async function retrieveOne(req, res) {
+    const theUser = await User.getById(req.params.id);
+    res.render('users', {
+        locals: {
+            oneUser: theUser
+        }
+    });
+}
+
 module.exports = {
-    addUser
+    addUser,
+    retrieveOne
 };
