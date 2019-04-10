@@ -1,10 +1,10 @@
 insert into users
 (first_name, last_name, email, username, password)
 values
-('chris', 'childers', 'childers@yahoo.com', 'CSquared', 'password'),
-('ryan', 'yim', 'email@email.com', 'Ryman', 'password'),
-('victor', 'troung', 'franken@stein.net', 'VDog', 'password'),
-('jason', 'boerner', 'jason@bourne.blackbriar', 'JB', 'password');
+('chris', 'childers', 'childers@yahoo.com', 'CSquared', '$2a$10$oe2opdnnfX/Bh3LoN6xvxOBg8n23Oyxug2kpcabP5fJCwzeNxe/Pa'),
+('ryan', 'yim', 'email@email.com', 'Ryman', '$2a$10$oe2opdnnfX/Bh3LoN6xvxOBg8n23Oyxug2kpcabP5fJCwzeNxe/Pa'),
+('victor', 'troung', 'franken@stein.net', 'VDog', '$2a$10$oe2opdnnfX/Bh3LoN6xvxOBg8n23Oyxug2kpcabP5fJCwzeNxe/Pa'),
+('jason', 'boerner', 'jason@bourne.blackbriar', 'JB', '$2a$10$oe2opdnnfX/Bh3LoN6xvxOBg8n23Oyxug2kpcabP5fJCwzeNxe/Pa');
 
 INSERT into frameworks
 (name, code)
