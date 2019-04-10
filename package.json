@@ -15,12 +15,12 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yknyim/dev-depot-backend-project.git"
+    "url": "git+https://github.com/ChristopherChilders/dev-depot-backend-project.git"
   },
   "bugs": {
-    "url": "https://github.com/yknyim/dev-depot-backend-project/issues"
+    "url": "https://github.com/ChristopherChilders/dev-depot-backend-project/issues"
   },
-  "homepage": "https://github.com/yknyim/dev-depot-backend-project#readme",
+  "homepage": "https://github.com/ChristopherChilders/dev-depot-backend-project#readme",
   "description": "",
   "devDependencies": {
     "chai": "^4.2.0",
