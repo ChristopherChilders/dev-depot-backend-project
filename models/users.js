@@ -55,6 +55,20 @@ class Users {
             return null;
         })
     }
+    static getByEmail(email) {
+        return db.one(`select * from users where email=$1`, [email])
+            .then(userData => {
+                const aUser = new User(
+                    userData.id,
+                    userData.first_name,
+                    userData.last_name,
+                    userData.email,
+                    userData.username,
+                    userData.password
+                );
+                return aUser;
+            });
+    }
     save() {
         return db.result(`
         update users set
@@ -64,4 +78,14 @@ class Users {
         username='${this.username}',
         password='${this.password}'`)
     }
+    setPassword(newPassword) {
+        const salt = bcrypt.genSaltSync(10);
+        const hash = bcrypt.hashSync(newPassword, salt);
+        this.password = hash;
+    }
+    checkPassword(aPassword) {
+        return bcrypt.compareSync(aPassword, this.password);
+    }
 }
+
+module.exports = User;
