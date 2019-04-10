@@ -1,6 +1,9 @@
 //Require a model with functions for your controller to use. Example we use here is our Users model template.
 const User = require('../models/users');
 
+
+// Your functions here should await functions in the specified model.
+// Again, we used functions from our Users.js model template.
 async function create(req, res) {
    const theUserId = await User.add(req.body);
    res.render('users', {
@@ -38,7 +41,7 @@ async function deleteOne(req, res) {
    });
 }
 
-// export every function created in controller
+// Export every function created in controller.
 module.exports = {
    create,
    retrieveAll,
