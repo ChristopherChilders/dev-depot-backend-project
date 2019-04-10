@@ -16,8 +16,8 @@ create table frameworks (
 create table favorites (
     id serial PRIMARY KEY,
     user_id INTEGER REFERENCES users(id),
-    frameworks INTEGER REFERENCES frameworks(id),
-    methods INTEGER REFERENCES methods(id)
+    framework_id INTEGER REFERENCES frameworks(id),
+    method_id INTEGER REFERENCES methods(id)
 );
 
 create table methods (
