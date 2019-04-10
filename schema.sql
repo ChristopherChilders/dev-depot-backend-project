@@ -13,15 +13,15 @@ create table frameworks (
     code VARCHAR(500)
 );
 
+create table methods (
+    id serial PRIMARY KEY,
+    name VARCHAR(100),
+    code VARCHAR(500)
+);
+
 create table favorites (
     id serial PRIMARY KEY,
     user_id INTEGER REFERENCES users(id),
     framework_id INTEGER REFERENCES frameworks(id),
     method_id INTEGER REFERENCES methods(id)
-);
-
-create table methods (
-    id serial PRIMARY KEY,
-    name VARCHAR(100),
-    code VARCHAR(500)
 );
