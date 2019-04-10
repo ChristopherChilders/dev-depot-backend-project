@@ -1,7 +1,7 @@
 const db = require('./conn');
 const bcrypt = require('bcryptjs');
 
-class Users {
+class User {
     constructor(id, first_name, last_name, email, username, password) {
         this.id = id;
         this.firstName = first_name;
