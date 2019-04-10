@@ -38,6 +38,13 @@ class Framework {
             return data;
         });
     }
+    save() {
+        return db.result(`
+        update frameworks set 
+            name='${this.name}',
+            code='${this.code}'
+        where id=${this.id}`);
+    }
 };
 
 module.exports = Framework;
