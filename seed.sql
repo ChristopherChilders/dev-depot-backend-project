@@ -1,7 +1,7 @@
 insert into users
 (first_name, last_name, email, username, password)
 values
-('chris', 'childers', 'christopher.childers13@yahoo.com', 'ChristopherChilders', 'password'),
+('chris', 'childers', 'childers@yahoo.com', 'CSquared', 'password'),
 ('ryan', 'yim', 'email@email.com', 'Ryman', 'password'),
 ('victor', 'troung', 'franken@stein.net', 'VDog', 'password'),
 ('jason', 'boerner', 'jason@bourne.blackbriar', 'JB', 'password');
