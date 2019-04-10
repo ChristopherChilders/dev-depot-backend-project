@@ -14,9 +14,12 @@ async function retrieveAllUsers (req, res) {
     console.log(allUsers);
     res.json(allUsers);
 }
-
+function updateUser (req, res) {
+    res.json({message: "user has been updates"});
+}
 module.exports = {
     addUser,
     deleteUser,
-    retrieveAllUsers
+    retrieveAllUsers,
+    updateUser
 };
