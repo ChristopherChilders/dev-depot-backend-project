@@ -5,7 +5,7 @@ const devDepotRouter = Router();
 const {
     addUser,
     retrieveOne
-} = require('../controllers/crud');
+} = require('../controllers/users');
 
 devDepotRouter.post('/user', addUser);
 devDepotRouter.get('/', retrieveOne);
