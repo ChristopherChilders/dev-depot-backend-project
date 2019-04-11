@@ -21,11 +21,22 @@ class Framework {
                 const frameInstance = new Framework(
                     frameData.id,
                     frameData.name,
-                    frameData.code
+                    frameData.frame
                 );
                 return frameInstance
             });
     }
+    static loadFile(filePath){
+        let result = null;
+        let xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", filePath, false);
+        xmlhttp.send();
+        if (xmlhttp.status==200) {
+            result= xmlhttp.responseText;
+        }
+        return result;
+    }
+
     static addNewFrame(name, code) {
         return db.one(`
         insert into frameworks
