@@ -1,6 +1,12 @@
 const db = require('./conn');
 
 class Favorite {
+    constructor (id, user_id, framework_id, method_id) {
+        this.id = id;
+        this.userId = user_id;
+        this.frameworkId = framework_id;
+        this.methodId = method_id;
+    }
     static getAll () {
         db.any(`select * from favorites`)
         .then((arrayOfFavorites) => {
