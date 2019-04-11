@@ -36,15 +36,17 @@ app.use(session({
 // Router
 const logInRouter = require('./routes/login');
 app.use('/login', logInRouter);
+const dashboardRouter = require('./routes/dashboard');
+app.use('/dashboard', dashboardRouter);
 
-app.get('/dashboard', (req, res) => {
-    if (req.session.user) {
-        console.log(`The user's id is: ${req.session.user}`);
-        res.render('dashboard');
-    } else {
-        res.redirect('/login');
-    }
-});
+// app.get('/dashboard', (req, res) => {
+//     if (req.session.user) {
+//         console.log(`The user's id is: ${req.session.user}`);
+//         res.render('dashboard');
+//     } else {
+//         res.redirect('/login');
+//     }
+// });
 
 
 
