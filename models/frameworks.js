@@ -1,10 +1,10 @@
 const db = require('./conn');
 
 class Framework {
-    constructor(id, name, code) {
+    constructor(id, name, framework_path) {
         this.id = id;
         this.name = name;
-        this.code = code;
+        this.framework = framework_path;
     }
     static deleteByName (name) {
         return db.result(`delete from frameworks where name=$1`, [name]);
@@ -21,19 +21,30 @@ class Framework {
                 const frameInstance = new Framework(
                     frameData.id,
                     frameData.name,
-                    frameData.code
+                    frameData.framework
                 );
                 return frameInstance
             });
     }
-    static addNewFrame(name, code) {
+    static loadFile(filePath){
+        let result = null;
+        let xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", filePath, false);
+        xmlhttp.send();
+        if (xmlhttp.status==200) {
+            result= xmlhttp.responseText;
+        }
+        return result;
+    }
+
+    static addNewFrame(name, framework_path) {
         return db.one(`
         insert into frameworks
-            (name, code)
+            (name, framework_path)
         values
             ($1, $2)
-        returning id, name, code`,
-        [name, code])
+        returning id, name, framework_path`,
+        [name, framework_path])
         .then((data) => {
             return data;
         });
@@ -42,7 +53,7 @@ class Framework {
         return db.result(`
         update frameworks set 
             name='${this.name}',
-            code='${this.code}'
+            framwork='${this.framework_path}'
         where id=${this.id}`);
     }
 };

@@ -16,7 +16,7 @@ create table frameworks (
 create table methods (
     id serial PRIMARY KEY,
     name VARCHAR(100),
-    code VARCHAR(500)
+    framework_path VARCHAR(500)
 );
 
 create table favorites (

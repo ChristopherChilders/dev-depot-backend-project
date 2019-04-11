@@ -7,11 +7,12 @@ values
 ('jason', 'boerner', 'jason@bourne.blackbriar', 'JB', '$2a$10$oe2opdnnfX/Bh3LoN6xvxOBg8n23Oyxug2kpcabP5fJCwzeNxe/Pa');
 
 INSERT into frameworks
-(name, code)
+(name, framework_path)
 values
 ('index.js', 'the path'),
 ('schema.sql', 'the path'),
-('conn.js', 'the path');
+('conn.js', 'the path'),
+('users.js','templates/users.js');
 
 insert into methods
 (name, code)
