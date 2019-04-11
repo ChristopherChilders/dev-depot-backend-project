@@ -33,24 +33,14 @@ app.use(session({
 // }
 // demo();
 
-
-app.get('/login', (req, res) => {
-    res.render('login', {
-        locals: {
-            email: '',
-            message: ''
-        }
-    });
-});
-
 // Router
 const logInRouter = require('./routes/login');
-app.use('/', logInRouter);
+app.use('/login', logInRouter);
 
 app.get('/dashboard', (req, res) => {
     if (req.session.user) {
         console.log(`The user's id is: ${req.session.user}`);
-        res.send('Welcome to DevDepot!');
+        res.render('dashboard');
     } else {
         res.redirect('/login');
     }
