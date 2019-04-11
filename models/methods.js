@@ -1,5 +1,11 @@
 const db = reuqire('./conn');
 class Method {
+    constructor(id, name, code) {
+        this.id = id;
+        this.name = name;
+        this.code = code;
+    }
+    
     static getAll(){
         return db.any(`select * from methods`)
         .then((arrayOfMethods)=> {
