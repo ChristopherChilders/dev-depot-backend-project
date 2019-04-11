@@ -24,6 +24,7 @@ app.use(session({
     secret: process.env.SESSION_SECRET
 }));
 
+// function to get a hashed password
 // async function demo() {
 //     const user = await User.getByEmail('childers@yahoo.com');
 //     user.setPassword("password");
@@ -42,26 +43,9 @@ app.get('/login', (req, res) => {
     });
 });
 
-app.post('/login', async (req, res) => {
-    console.log(req.body.email);
-    console.log(req.body.password);
-
-    const theUser = await User.getByEmail(req.body.email);
-    const correctPassword = theUser.checkPassword(req.body.password);
-    if (correctPassword) {
-        req.session.user = theUser.id;
-        req.session.save(() => {
-            res.redirect('/dashboard');
-        });
-    } else {
-        res.render('login', {
-            locals: {
-                email: req.body.email,
-                message: 'Password IS WRONG. GET OUT!'
-            }
-        });
-    }
-});
+// Router
+const logInRouter = require('./routes/login');
+app.use('/', logInRouter);
 
 app.get('/dashboard', (req, res) => {
     if (req.session.user) {

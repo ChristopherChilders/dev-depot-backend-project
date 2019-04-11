@@ -8,7 +8,8 @@
     "db:init": "psql -f schema.sql devdepot-app && psql -f seed.sql devdepot-app",
     "db:destroy": "dropdb devdepot-app",
     "db:reset": "npm run db:destroy; npm run db:create && npm run db:init",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha",
+    "test:watch": "mocha -w"
   },
   "keywords": [],
   "author": "",
