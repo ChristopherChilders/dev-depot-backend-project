@@ -4,7 +4,8 @@ const Router = express.Router;
 const loginRouter = Router();
 const {logIn, logInUser} = require('../controllers/login');
 
+
 loginRouter.get('/', logIn);
-loginRouter.post('/login', logInUser);
+loginRouter.post('/', logInUser);
 
 module.exports = loginRouter;
