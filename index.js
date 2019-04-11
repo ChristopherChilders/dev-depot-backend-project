@@ -24,6 +24,7 @@ app.use(session({
     secret: process.env.SESSION_SECRET
 }));
 
+// function to get a hashed password
 // async function demo() {
 //     const user = await User.getByEmail('childers@yahoo.com');
 //     user.setPassword("password");
