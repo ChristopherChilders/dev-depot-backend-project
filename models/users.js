@@ -1,5 +1,6 @@
 const db = require('./conn');
 const bcrypt = require('bcryptjs');
+const Favorite = require('./favorites');
 
 class User {
     constructor(id, first_name, last_name, email, username, password) {
@@ -85,6 +86,22 @@ class User {
     }
     checkPassword(aPassword) {
         return bcrypt.compareSync(aPassword, this.password);
+    }
+    getFavorites(){
+        return db.any(`select * from favorites where user_id=${this.id}`)
+                .then(favorites =>{
+                    let bunchOfFavorites = favorites.map( oneFavorite =>{
+                        let oldF = new Favorite(
+                            oneFavorite.id,
+                            oneFavorite.user_id,
+                            oneFavorite.framework_id,
+                            oneFavorite.method
+                        );
+                        return oldF;
+                    }
+                    )
+                    return bunchOfFavorites;
+                })
     }
 }
 
