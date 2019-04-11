@@ -17,7 +17,7 @@ const Favorites = require('../models/favorites');
 describe('Users model', () => {
     it('Should be able to get an array of Users', async () => {
         const theUsers = await User.getAll();
-        expect(theUsers).to.be.an.arrayOf(User);
+        expect(theUsers).to.be.an.instanceOf(Array);
     });
     it('should get one user by id', async () => {
         const theUser = await User.getById(1);
@@ -28,9 +28,11 @@ describe('Users model', () => {
 describe('Users and Favorites', () => {
     it('should get all the favorites for an individual user', async () => {
         const theUser = await User.getById(1);
-        const theFavorites = await theUser.Favorites;
+        // console.log(theUser);
+        const theFavorites = await theUser.getFavorites();
+        console.log(theFavorites);
         expect(theFavorites).to.be.an.instanceOf(Array);
-        expect(theFavorites).to.have.lengthOf(3);
+        expect(theFavorites).to.have.lengthOf(1);
         for(let i=0; i<theFavorites.length; i++) {
             expect(theFavorites[i]).to.be.an.instanceOf(Favorites);
         }
