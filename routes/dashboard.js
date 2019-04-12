@@ -6,4 +6,5 @@ const {goToDashboard} = require('../controllers/dashboard');
 
 dashboardRouter.get('/', goToDashboard);
 
+
 module.exports = dashboardRouter;

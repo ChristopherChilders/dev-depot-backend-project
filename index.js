@@ -8,8 +8,11 @@ const es6Renderer = require('express-es6-template-engine');
 
 const User = require('./models/users');
 
+
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
+
+
 // const setupAuth = require('./auth');
 
 // setupAuth(app);
@@ -38,8 +41,19 @@ const logInRouter = require('./routes/login');
 app.use('/login', logInRouter);
 const dashboardRouter = require('./routes/dashboard');
 app.use('/dashboard', dashboardRouter);
-const registrationRouter = require('./routes/registration');
-app.use('/registration', registrationRouter);
+
+const frameworksRouter = require('./routes/frameworks');
+app.use('/frameworks', frameworksRouter);
+
+// app.get('/dashboard', (req, res) => {
+//     if (req.session.user) {
+//         console.log(`The user's id is: ${req.session.user}`);
+//         res.render('dashboard');
+//     } else {
+//         res.redirect('/login');
+//     }
+// });
+
 
 
 
