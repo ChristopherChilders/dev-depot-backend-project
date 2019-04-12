@@ -4,3 +4,5 @@ const registrationRouter = Router();
 const register = require('../controllers/registration');
 
 registrationRouter.post('/', register);
+
+module.exports = registrationRouter;
