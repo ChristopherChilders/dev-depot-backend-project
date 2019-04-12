@@ -9,7 +9,8 @@
 </head>
 <body>
   <h1>DevDepot</h1>
-  <div class="dropdown">
+  <h3>${message}</h3>
+  <!-- <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Dropdown button
       </button>
@@ -18,9 +19,16 @@
         <a class="dropdown-item" href="#">Another action</a>
         <a class="dropdown-item" href="#">Something else here</a>
       </div>
-    </div>
+    </div> -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/dashboard" style="color: red;">Home</a></li>
+            <li class="breadcrumb-item"><a href="/frameworks">Frameworks</a></li>
+            <!-- <li class="breadcrumb-item"><a href="/favorites">Sell</a></li> -->
+            <li class="breadcrumb-item"><a href="/login">Log-out</a></li>
+        </ol>
+    </nav>
     <div data-users>
-      ${code}
     </div>
     <script src="scripts.js"></script>
 
