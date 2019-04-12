@@ -41,6 +41,8 @@ const logInRouter = require('./routes/login');
 app.use('/login', logInRouter);
 const dashboardRouter = require('./routes/dashboard');
 app.use('/dashboard', dashboardRouter);
+const frameworksRouter = require('./routes/frameworks');
+app.use('/frameworks', frameworksRouter);
 
 // app.get('/dashboard', (req, res) => {
 //     if (req.session.user) {
