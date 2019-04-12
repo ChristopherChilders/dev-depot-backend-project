@@ -34,6 +34,7 @@
     "express": "^4.16.4",
     "express-es6-template-engine": "^2.1.7",
     "express-session": "^1.15.6",
+    "fs": "0.0.1-security",
     "helmet": "^3.16.0",
     "passport": "^0.4.0",
     "passport-github": "^1.1.0",

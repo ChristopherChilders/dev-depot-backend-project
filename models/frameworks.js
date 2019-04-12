@@ -26,16 +26,6 @@ class Framework {
                 return frameInstance
             });
     }
-    static loadFile(filePath){
-        let result = null;
-        let xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("GET", filePath, false);
-        xmlhttp.send();
-        if (xmlhttp.status==200) {
-            result= xmlhttp.responseText;
-        }
-        return result;
-    }
 
     static addNewFrame(name, framework_path) {
         return db.one(`

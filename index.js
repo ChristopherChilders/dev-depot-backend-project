@@ -8,8 +8,11 @@ const es6Renderer = require('express-es6-template-engine');
 
 const User = require('./models/users');
 
+
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
+
+
 // const setupAuth = require('./auth');
 
 // setupAuth(app);
@@ -17,6 +20,10 @@ const FileStore = require('session-file-store')(session);
 app.engine('html', es6Renderer);
 app.set('view engine', 'html');
 app.set('views', 'views')
+
+
+// app.use(express.static('public'));
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(session({
