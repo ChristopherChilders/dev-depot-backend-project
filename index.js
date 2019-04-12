@@ -8,8 +8,11 @@ const es6Renderer = require('express-es6-template-engine');
 
 const User = require('./models/users');
 
+
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
+
+
 // const setupAuth = require('./auth');
 
 // setupAuth(app);
