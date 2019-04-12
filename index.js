@@ -21,10 +21,6 @@ app.engine('html', es6Renderer);
 app.set('view engine', 'html');
 app.set('views', 'views')
 
-
-// app.use(express.static('public'));
-
-
 app.use(express.urlencoded({ extended: true }));
 app.use(session({
     store: new FileStore(),
