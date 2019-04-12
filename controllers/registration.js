@@ -1,8 +1,11 @@
 const User = require('../models/users');
-async function saveUser (req, res) {
-
-}
-
+async function goToRegistration(req, res) {
+    res.render('registration')
+} 
 module.exports = {
-    saveUser
-};
+    goToRegistration
+}
+// module.exports = function (req, res) {
+//     console.log(req.body.firstName);
+//     User.add(req.body.firstName, req.body.lastName, req.body.email, req.body.password)
+// };
