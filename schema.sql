@@ -7,21 +7,21 @@ create table users (
     password varchar(500)    
 );
 
-create table frameworks (
+create table json_packages (
     id serial PRIMARY KEY,
     name VARCHAR(100),
-    framework_path VARCHAR(500)
+    commands VARCHAR(100),
+    instructions VARCHAR(500)
 );
 
-create table methods (
+create table reviews (
     id serial PRIMARY KEY,
-    name VARCHAR(100),
-    code VARCHAR(500)
+    user_id INTEGER,
+    topic VARCHAR(100),
+    content text(500)
 );
 
 create table favorites (
     id serial PRIMARY KEY,
-    user_id INTEGER REFERENCES users(id),
-    framework_id INTEGER REFERENCES frameworks(id),
-    method_id INTEGER REFERENCES methods(id)
+    user_id INTEGER REFERENCES users(id)
 );

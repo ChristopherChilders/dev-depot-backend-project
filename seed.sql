@@ -6,25 +6,26 @@ values
 ('victor', 'troung', 'franken@stein.net', 'VDog', '$2a$10$oe2opdnnfX/Bh3LoN6xvxOBg8n23Oyxug2kpcabP5fJCwzeNxe/Pa'),
 ('jason', 'boerner', 'jason@bourne.blackbriar', 'JB', '$2a$10$oe2opdnnfX/Bh3LoN6xvxOBg8n23Oyxug2kpcabP5fJCwzeNxe/Pa');
 
-INSERT into frameworks
-(name, framework_path)
+INSERT into json_packages
+(name, commands, instructions)
 values
 ('index.js', 'the path'),
 ('schema.sql', 'the path'),
 ('conn.js', 'the path'),
 ('users.js','templates/users.js');
 
-insert into methods
-(name, code)
+insert into reviews
+(user_id, topic, content)
 VALUES
-('users model', 'the path'),
-('users controller', 'the path'),
-('users route', 'the path');
+(1, 'Website functionality', 'Your website is fantastic'),
+(2, 'Templates', 'I love how you format your templates to be easily inserted into a project'),
+(3, 'Naviagation', 'The way that you have made naviating your website is so easy. I always know where stuff is!'),
+(4, 'Awful stuff', 'i just want to complain because i am sad');
 
 insert into favorites
-(user_id, framework_id, method_id)
+(user_id)
 values
-(1, 2, 2),
-(3, 1, 3),
-(2, 3, 3),
-(4, 2, 1);
+(1),
+(2),
+(3),
+(4);
