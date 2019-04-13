@@ -10,15 +10,16 @@ create table users (
 create table json_packages (
     id serial PRIMARY KEY,
     name VARCHAR(100),
-    commands VARCHAR(100),
-    instructions VARCHAR(500)
+    packages VARCHAR(100),
+    installations VARCHAR(250),
+    scripts VARCHAR(500)
 );
 
 create table reviews (
     id serial PRIMARY KEY,
     user_id INTEGER,
     topic VARCHAR(100),
-    content text(500)
+    content varchar(500)
 );
 
 create table favorites (

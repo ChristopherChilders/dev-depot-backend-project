@@ -7,12 +7,10 @@ values
 ('jason', 'boerner', 'jason@bourne.blackbriar', 'JB', '$2a$10$oe2opdnnfX/Bh3LoN6xvxOBg8n23Oyxug2kpcabP5fJCwzeNxe/Pa');
 
 INSERT into json_packages
-(name, commands, instructions)
+(name, packages, installations, scripts)
 values
-('index.js', 'the path'),
-('schema.sql', 'the path'),
-('conn.js', 'the path'),
-('users.js','templates/users.js');
+('Test Driven Development (TDD)', 'Chai, Chai-as-promised, and mocha', 'npm install --save-dev chai chai-as-promised mocha', '"test": "mocha", "test:watch": "mocha -w"'),
+('Nodemon Developing', 'nodemon', 'npm install nodemon --save-dev', '"dev": "nodemon index.js"');
 
 insert into reviews
 (user_id, topic, content)
