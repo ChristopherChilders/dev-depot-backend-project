@@ -1,4 +1,4 @@
-const db = reuqire('./conn');
+const db = require('./conn');
 class Review {
     constructor(id, user_id, topic, content) {
         this.id = id;
