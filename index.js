@@ -45,6 +45,9 @@ app.use('/dashboard', dashboardRouter);
 const frameworksRouter = require('./routes/frameworks');
 app.use('/frameworks', frameworksRouter);
 
+const packagesRouter = require('./routes/json_packages');
+app.use('/json_packages', packagesRouter);
+
 // app.get('/dashboard', (req, res) => {
 //     if (req.session.user) {
 //         console.log(`The user's id is: ${req.session.user}`);
