@@ -91,8 +91,7 @@ class User {
     updatePassword() {
         return db.result(`
         update users 
-        set
-        password='${this.password}'
+        set password='${this.password}'
         where id=${this.id}`)
     }
     getFavorites(){
