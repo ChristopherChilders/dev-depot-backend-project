@@ -7,7 +7,7 @@ const {
     retrieveOne
 } = require('../controllers/users');
 
-devDepotRouter.post('/user', addUser);
+// devDepotRouter.post('/user', addUser);
 devDepotRouter.get('/', retrieveOne);
 
 module.exports = devDepotRouter;

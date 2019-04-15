@@ -12,7 +12,8 @@ const User = require('./models/users');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 
-
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: false}));
 // const setupAuth = require('./auth');
 
 // setupAuth(app);
@@ -46,6 +47,8 @@ app.use('/frameworks', frameworksRouter);
 const registrationRouter = require('./routes/registration');
 app.use('/registration', registrationRouter);
 
+const registrationRouter = require('./routes/registration');
+app.use('/registration', registrationRouter);
 // app.get('/dashboard', (req, res) => {
 //     if (req.session.user) {
 //         console.log(`The user's id is: ${req.session.user}`);
