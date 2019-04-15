@@ -63,7 +63,7 @@ class User {
                 })
     }
     save() {
-        //used to add new users
+        //This is used to add new users
         return db.result(`            
         update users set 
             first_name='${this.firstName}',
@@ -75,7 +75,7 @@ class User {
     }
 
     setPassword(newPassword) {
-        //we use bcrypt but feel free to use your own encryption module
+        //We use bcrypt but feel free to use your own encryption module.
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(newPassword, salt);
         this.password = hash;

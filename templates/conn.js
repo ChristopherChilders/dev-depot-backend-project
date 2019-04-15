@@ -1,4 +1,4 @@
-//this should go within your models directory
+//This should go within your models directory.
 
 require('dotenv').config();
 const pgp = require('pg-promise')({

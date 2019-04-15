@@ -1,5 +1,7 @@
 //dotenv helps to hide sensitive information by utilizing a .env file.
+
 //the module imports variables set in the file to use wherever 'dotenv' is required. 
+
 //useful for hiding PORT number, session secret, database information, etc.
 
 require('dotenv').config();
