@@ -9,14 +9,14 @@ class User {
         this.lastName = last_name;
         this.email = email;
         this.username = username;
-        this.password =password;
+        this.password = password;
     }
-    static add(userData){
+    static add(first_name, last_name, email, username, password){
         return db.one(`
         insert into users
         (first_name, last_name, email, username, password)
         values
-        ($1, $2, $3, $4, $5)`[first_name, last_name, email, username, password])
+        ($1, $2, $3, $4, $5)`, [first_name, last_name, email, username, password])
         .then((data) => {
             return data.id;
         })
