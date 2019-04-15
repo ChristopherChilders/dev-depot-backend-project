@@ -3,7 +3,7 @@ const User = require('../models/users');
 
 
 // Your functions here should await functions in the specified model.
-// Again, we used functions from our Users.js model template.
+// Again, we used functions from our Users.js model template as an example.
 async function create(req, res) {
    const theUserId = await User.add(req.body);
    res.render('users', {

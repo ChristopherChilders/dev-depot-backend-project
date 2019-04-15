@@ -1,7 +1,7 @@
 const express = require('express');
 
 const Router = express.Router;
-//name your routes to controller you are directing requests to
+//Please name your routes to controller you are directing requests to.
 const userRoutes = Router();
 
 const {

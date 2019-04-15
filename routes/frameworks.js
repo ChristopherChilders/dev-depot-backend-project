@@ -7,7 +7,9 @@ const {
     getModelsTemplate,
     getLoginTemplate,
     getControllerTemplate,
-    getConnjsTemplate
+    getConnjsTemplate,
+    getDotEnvTemplate,
+    getGitIgnoreTemplate
 } = require('../controllers/frameworks');
 
 frameworksRouter.get('/', goToFrameworks);
@@ -16,6 +18,7 @@ frameworksRouter.get('/models', getModelsTemplate);
 frameworksRouter.get('/login', getLoginTemplate);
 frameworksRouter.get('/controller', getControllerTemplate);
 frameworksRouter.get('/conn', getConnjsTemplate);
-
+frameworksRouter.get('/env', getDotEnvTemplate);
+frameworksRouter.get('/gitignore', getGitIgnoreTemplate);
 
 module.exports = frameworksRouter;
