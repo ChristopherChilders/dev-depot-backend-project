@@ -15,16 +15,28 @@ registrationRouter.post('/', (req, res) => {
     const email = req.body.email;
     const username = req.body.username;
     const password = req.body.password;
+    // const hashedPassword = setPassword(req.body.password);
+    // console.log(hashedPassword);
     console.log(firstName, lastName, email, username, password);
     User.add(firstName, lastName, email, username, password)
-        .catch(err => {
-            console.log(err);
-        })
-        .then(newUser => {
-            console.log(newUser);
-            req.session.user = newUser;
-            res.redirect('/dashboard');
-        })
+    .then(async () => {
+        const user = await User.getByEmail(`${req.body.email}`);
+        console.log(user);
+        user.setPassword(`${req.body.password}`);
+        await user.updatePassword();
+        console.log('you did the thing')
+        
+    })
+    .catch(err => {
+        console.log(err);
+        console.log('////////////////////////')
+        res.redirect('/registration');
+    })
+    .then(newUser => {
+        console.log(newUser);
+        req.session.user = newUser;
+        res.redirect('/login');
+    })
 })
 
 

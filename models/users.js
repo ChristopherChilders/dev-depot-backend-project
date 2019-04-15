@@ -16,7 +16,8 @@ class User {
         insert into users
         (first_name, last_name, email, username, password)
         values
-        ($1, $2, $3, $4, $5)`, [first_name, last_name, email, username, password])
+        ($1, $2, $3, $4, $5)
+        returning id, first_name, last_name, email, username, password`, [first_name, last_name, email, username, password])
         .then((data) => {
             return data.id;
         })
@@ -86,6 +87,13 @@ class User {
     }
     checkPassword(aPassword) {
         return bcrypt.compareSync(aPassword, this.password);
+    }
+    updatePassword() {
+        return db.result(`
+        update users 
+        set
+        password='${this.password}'
+        where id=${this.id}`)
     }
     getFavorites(){
         return db.any(`select * from favorites where user_id=${this.id}`)
