@@ -95,7 +95,6 @@ class User {
     }
 
     checkPassword(aPassword) {
-        // const isCorrect = bcrypt.compareSync(aPassword, this.password);
         return bcrypt.compareSync(aPassword, this.password);
     }
 }
