@@ -21,7 +21,7 @@ class User {
         .then((data) => {
             return data.id;
         })
-    }
+    } 
     static delete(id){
         return db.result('delete from users where id=$1', [id]);
     }

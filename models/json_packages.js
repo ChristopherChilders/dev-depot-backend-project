@@ -31,7 +31,7 @@ class Package {
             });
     }
 
-    static addNewFrame(name, packages, installations, scripts) {
+    static addNewPackage(name, packages, installations, scripts) {
         return db.one(`
         insert into json_packages
             (name, packages, installations, scripts)
