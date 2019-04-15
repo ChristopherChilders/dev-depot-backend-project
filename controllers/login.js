@@ -6,7 +6,8 @@ async function logIn(req, res) {
     res.render('login', {
         locals: {
             email: '',
-            password: ''
+            password: '',
+            message: ''
         }
     });
 }

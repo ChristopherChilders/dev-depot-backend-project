@@ -1,10 +1,10 @@
 // Bring in the database connection.
 const db = require('./conn');
 
-// declare the class
+// Declare the class.
 class Models {
 
-    // constructor needs to be customized to your own database columns for however many exist
+    // The constructor needs to be customized to your own database columns for however many exist.
     constructor(id, database_column1, database_column2, database_column3) {
 
         this.id = id;
@@ -12,7 +12,7 @@ class Models {
         this.databaseColumn2 = database_column2;
         this.databaseColumn3 = database_column3;
     }
-    //deletes the specific id in selected database
+    //This deletes the specific id in selected database.
     static delete(id) {
         return db.result('delete from users where id=$1', [id]);
     }
@@ -63,9 +63,10 @@ class Models {
                 })
     }
     save() {
-        //used to add into the current database
+        //This is used to add into the current database.
         //`databaseName` keyword to be replaced by database name
         // `name` keywords to be replaced by database values 
+        //This should change according to how many columns your database has.
         return db.result(`            
         update databaseName set 
             first_name='${this.firstName}',
@@ -78,5 +79,5 @@ class Models {
     }
 
 
-// export the class
+// Don't forget to export the class!
 module.exports = Models;

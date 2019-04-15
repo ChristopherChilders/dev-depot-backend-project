@@ -6,8 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DevDepot</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+
+    </style>
 </head>
 <body>
+    <h1 style="text-align: center;">Welcome to DevDepot</h1>
+    <h3 style="text-align: center;"> The place for all your framework needs!</h3>
+    <h4 
+        class="
+            alert
+            alert-primary
+            ${ message ? `visible` : `d-none` }
+            "
+        >${message}</h4>
     <form 
         action="/login"
         method="POST"
@@ -22,6 +34,7 @@
         </div>
         <div style="text-align: center;">
             <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="/registration">Create new account</a>
         </div>
     </form>
 </body>

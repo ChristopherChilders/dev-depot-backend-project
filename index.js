@@ -42,9 +42,10 @@ const logInRouter = require('./routes/login');
 app.use('/login', logInRouter);
 const dashboardRouter = require('./routes/dashboard');
 app.use('/dashboard', dashboardRouter);
-
 const frameworksRouter = require('./routes/frameworks');
 app.use('/frameworks', frameworksRouter);
+const registrationRouter = require('./routes/registration');
+app.use('/registration', registrationRouter);
 
 const registrationRouter = require('./routes/registration');
 app.use('/registration', registrationRouter);
