@@ -66,6 +66,7 @@ class Models {
         //used to add into the current database
         //`databaseName` keyword to be replaced by database name
         // `name` keywords to be replaced by database values 
+        //change according to how many columns your database has
         return db.result(`            
         update databaseName set 
             first_name='${this.firstName}',

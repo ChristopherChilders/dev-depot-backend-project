@@ -72,10 +72,27 @@ async function getControllerTemplate(req, res) {
     });
 };
 
+async function getConnjsTemplate(req, res) {
+
+    fs.readFile('templates/conn.js', 'utf-8', (err, templatedata) => {
+        // console.log(data);
+        //put res.render ino
+        highlight(templatedata,'js','html',(data)=>{
+            res.render('frameworks',{
+                locals: {
+                    code:data
+                }
+            });
+        });
+    });
+};
+
+
 module.exports = {
     goToFrameworks,
     getUsersTemplate,
     getModelsTemplate,
     getLoginTemplate,
-    getControllerTemplate
+    getControllerTemplate,
+    getConnjsTemplate
 }
