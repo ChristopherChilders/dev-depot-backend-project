@@ -25,7 +25,6 @@ async function getTdd(req, res) {
     res.render('json_packages', {
         locals: {
             name: jsonPackages.name,
-            name2: 'Nodemon Developing',
             terminal: jsonPackages.installations,
             scripts: jsonPackages.scripts
             
@@ -38,8 +37,7 @@ async function getNodemon(req, res) {
     const jsonPackages = await Packages.getById(2);
     res.render('json_packages', {
         locals: {
-            name: 'Test Driven Development (TDD)',
-            name2: jsonPackages.name,
+            name: jsonPackages.name,
             terminal: jsonPackages.installations,
             scripts: jsonPackages.scripts
             
