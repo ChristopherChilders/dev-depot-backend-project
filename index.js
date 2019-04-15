@@ -47,8 +47,6 @@ app.use('/frameworks', frameworksRouter);
 const registrationRouter = require('./routes/registration');
 app.use('/registration', registrationRouter);
 
-const registrationRouter = require('./routes/registration');
-app.use('/registration', registrationRouter);
 // app.get('/dashboard', (req, res) => {
 //     if (req.session.user) {
 //         console.log(`The user's id is: ${req.session.user}`);
