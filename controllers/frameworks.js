@@ -87,6 +87,21 @@ async function getConnjsTemplate(req, res) {
     });
 };
 
+async function getDotEnvTemplate(req, res) {
+
+    fs.readFile('templates/env.js', 'utf-8', (err, templatedata) => {
+        // console.log(data);
+        //put res.render ino
+        highlight(templatedata,'js','html',(data)=>{
+            res.render('frameworks',{
+                locals: {
+                    code:data
+                }
+            });
+        });
+    });
+};
+
 
 module.exports = {
     goToFrameworks,
@@ -94,5 +109,6 @@ module.exports = {
     getModelsTemplate,
     getLoginTemplate,
     getControllerTemplate,
-    getConnjsTemplate
+    getConnjsTemplate,
+    getDotEnvTemplate
 }
