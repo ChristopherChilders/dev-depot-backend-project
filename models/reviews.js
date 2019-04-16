@@ -37,38 +37,14 @@ class Review {
         // });
             .then((data)=>{
                 
-                let contentReviews = [];
-                
-                // for (let i=0; i<data.length; i+=1) {
-                //     contentReviews.push(data[i].content)
-                // }
-                // return contentReviews;
+                let reviewsTC = []
                 data.forEach(reviews=>{
-                    contentReviews.push(reviews.content);
+                    reviewsTC.push(reviews.topic)
+                    reviewsTC.push(reviews.content);
                 })
-                return contentReviews;
+                // console.log(reviewsTC);
+                return reviewsTC;
             })
-    }
-
-    static splitReviews(content){
-        console.log('=========================')
-        var currentIndex = content.length, temporaryValue, randomIndex;
-
-        // While there remain elements to shuffle...
-        while (0 !== currentIndex) {
-    
-        // Pick a remaining element...
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-    
-        // And swap it with the current element.
-        temporaryValue = content[currentIndex];
-        content[currentIndex] = content[randomIndex];
-        content[randomIndex] = temporaryValue;
-        }
-        
-        console.log(content);
-        return content;
     }
 
     static getById(id) {
