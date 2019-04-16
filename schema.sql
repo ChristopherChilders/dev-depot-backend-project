@@ -22,7 +22,9 @@ create table reviews (
     content varchar(500)
 );
 
-create table favorites (
+create table message_board (
     id serial PRIMARY KEY,
-    user_id INTEGER REFERENCES users(id)
+    user_id INTEGER REFERENCES users(id),
+    content VARCHAR(500),
+    created_at TIMESTAMP DEFAULT current_timestamp
 );

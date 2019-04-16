@@ -20,10 +20,10 @@ VALUES
 (3, 'Naviagation', 'The way that you have made naviating your website is so easy. I always know where stuff is!'),
 (4, 'Awful stuff', 'i just want to complain because i am sad');
 
-insert into favorites
-(user_id)
+insert into message_board
+(user_id, content, created_at)
 values
-(1),
-(2),
-(3),
-(4);
+(1, 'Hey everyone! What is up?', '2019-04-15 05:10:50'),
+(2, 'i love you guys', '2019-04-15 05:10:51'),
+(3, 'that was weird', '2019-04-15 05:10:52'),
+(4, 'Workout!', '2019-04-15 05:10:53');

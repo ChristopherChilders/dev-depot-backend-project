@@ -10,8 +10,7 @@ async function displayAllPackages(req, res) {
     const jsonPackages = await Packages.getAll();
     res.render('json_packages', {
         locals: {
-            name: jsonPackages[0].name,
-            name2: jsonPackages[1].name,
+            name: '',
             terminal: '',
             scripts: ''
             
