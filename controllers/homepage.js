@@ -5,10 +5,15 @@ const Review = require('../models/reviews');
 
 async function goToHomepage (req,res) {
     const reviews = await Review.getReviews();
-    console.log(reviews)
+    const randomReviews = await Review.splitReviews(reviews);
+
+    // console.log(reviews)
     res.render('homepage', {
         locals: {
-            reviewBoard: reviews
+            review1: randomReviews[0],
+            review2: randomReviews[1],
+            review3: randomReviews[2],
+            review4: randomReviews[3]
         }
     });
 }

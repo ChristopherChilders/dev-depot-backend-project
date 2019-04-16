@@ -23,7 +23,7 @@ class Review {
     };
     
     static getReviews(){
-        return db.any(`select content from reviews`)
+        return db.any(`select content,topic from reviews`)
         // .then((reviewsOnly)=> {
         //     return reviewsOnly.map((reviewData) =>{
         //         const aReviews = new Review (
@@ -36,8 +36,9 @@ class Review {
         //     });
         // });
             .then((data)=>{
-                // console.log(data)
+                
                 let contentReviews = [];
+                
                 // for (let i=0; i<data.length; i+=1) {
                 //     contentReviews.push(data[i].content)
                 // }
@@ -45,9 +46,29 @@ class Review {
                 data.forEach(reviews=>{
                     contentReviews.push(reviews.content);
                 })
-                // console.log('look here', contentReviews)
                 return contentReviews;
             })
+    }
+
+    static splitReviews(content){
+        console.log('=========================')
+        var currentIndex = content.length, temporaryValue, randomIndex;
+
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+    
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+    
+        // And swap it with the current element.
+        temporaryValue = content[currentIndex];
+        content[currentIndex] = content[randomIndex];
+        content[randomIndex] = temporaryValue;
+        }
+        
+        console.log(content);
+        return content;
     }
 
     static getById(id) {
