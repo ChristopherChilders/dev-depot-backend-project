@@ -1,6 +1,6 @@
 const db = require('./conn');
 const bcrypt = require('bcryptjs');
-const Favorite = require('./favorites');
+const Message = require('./message_board');
 
 class User {
     constructor(id, first_name, last_name, email, username, password) {
@@ -51,6 +51,7 @@ class User {
                 userData.username,
                 userData.password
             );
+            // console.log(userInstance);
             return userInstance;
         })
         .catch(()=>{
@@ -94,20 +95,20 @@ class User {
         set password='${this.password}'
         where id=${this.id}`)
     }
-    getFavorites(){
-        return db.any(`select * from favorites where user_id=${this.id}`)
-                .then(favorites =>{
-                    let bunchOfFavorites = favorites.map( oneFavorite =>{
-                        let oldF = new Favorite(
-                            oneFavorite.id,
-                            oneFavorite.user_id,
-                            oneFavorite.framework_id,
-                            oneFavorite.method
+    getMessages(){
+        return db.any(`select * from message_board where user_id=${this.id}`)
+                .then(messages =>{
+                    let bunchOfMessages = messages.map( oneMessage =>{
+                        let oldF = new Message(
+                            oneMessage.id,
+                            oneMessage.user_id,
+                            oneMessage.content,
+                            oneMessage.created_at
                         );
-                        return oldF;
+                        return oldMessage;
                     }
                     )
-                    return bunchOfFavorites;
+                    return bunchOfMessages;
                 })
     }
 }

@@ -54,8 +54,6 @@ const homepageRouter = require('./routes/homepage');
 app.use('/', homepageRouter);
 
 
-
-
 app.listen(PORT, () => {
     console.log(`You're running on port ${PORT}`);
 });
