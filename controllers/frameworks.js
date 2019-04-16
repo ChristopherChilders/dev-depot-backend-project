@@ -5,7 +5,7 @@ const highlight = require('pygments').colorize;
 
 
 async function goToFrameworks(req, res) {
-    data='template-here';
+    data='';
     res.render('frameworks',{
         locals: {
             code:data
