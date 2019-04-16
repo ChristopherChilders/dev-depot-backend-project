@@ -26,7 +26,7 @@ async function goToDashboard(req, res) {
     const userData = await User.getById(req.session.user);
 
     // console.log('====');
-    console.log('====',messageBoard);
+    // console.log('====',messageBoard);
     // console.log('++++++++++',userData);
     res.render('dashboard', {
         locals: {
