@@ -6,40 +6,38 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>DevDepot</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    body{
+      background-color: black;
+      color: white;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  </style>
 </head>
 <body>
   <h1 style="text-align: center;">DevDepot</h1>
-  <h3>${greeting}</h3>
-  <!-- <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Dropdown button
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-      </div>
-    </div> -->
+  <h3 style="font-style: italic;">${greeting}</h3>
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
+        <ol class="breadcrumb" style="background-color: black;">
             <li class="breadcrumb-item"><a href="/dashboard" style="color: red;">Home</a></li>
             <li class="breadcrumb-item"><a href="/frameworks">Frameworks</a></li>
             <li class="breadcrumb-item"><a href="/json_packages">JSON Packages</a></li>
             <li class="breadcrumb-item"><a href="/login">Log-out</a></li>
         </ol>
     </nav>
-    <div>
+    <div style="background-color:black; margin-bottom: 15px;">
       <h3>News</h3>
       <p>Welcome to the Launch of Dev Depot! We are extremely proud that you are checking our site and hope that you will use us for all your software shortcut needs.</p>
     </div>
-    <div>
+    <div style="background-color:black;">
       <h3>About Us</h3>
       <p>This site was created by Victor Troung, Ryan Yim, Jason Boerner, and Chris Childers as a part of our time at DigitalCrafts in Atlanta. 
         While this started out as a project for us to pass, we hope that it might be of some use to up and coming Web Developers that might be experiencing some of the problems that we had while starting out.
         We appreciate all of your support and even the criticism that you might share with us. Thank you, and keep coding!
       </p>
     </div>
-    <div>
+    <div style="background-color:black; margin-top: 15px;">
       <h3>Message Board</h3>
       <div>${message0}, ${user0}, ${timestamp0}</div>
       <div>${message1}, ${user1}, ${timestamp1}</div>
