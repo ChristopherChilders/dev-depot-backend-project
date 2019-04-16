@@ -8,7 +8,7 @@ class Message {
         this.createdAt = created_at;
     }
     static getAll () {
-        db.any(`select * from message_board`)
+        return db.any(`select * from message_board`)
         .then((arrayOfMessages) => {
             return arrayOfMessages.map((messageData) => {
                 const aMessage = new Message (
@@ -17,12 +17,28 @@ class Message {
                     messageData.content,
                     messageData.created_at
                 );
+                // console.log('======', aMessage)
                 return aMessage;
             })
         })
     }
+
+    static getMessage() {
+        return db.any(`select content from message_board`)
+            .then((data)=>{
+                let messageContent = [];
+                data.forEach((content)=>{
+                    messageContent.push(content.content)
+                })
+                // console.log('====look here')
+                // console.log(messageContent);
+                return messageContent;
+            })
+
+
+    }
     static getById (id) {
-        db.one(`select * from message_board where id=${id}`)
+        return db.one(`select * from message_board where id=${id}`)
         .then((messageData) => {
             const messageInstance = new Message (
                 messageData.id,
@@ -30,6 +46,7 @@ class Message {
                 messageData.content,
                 messageData.created_at
             );
+            console.log(messageInstance);
             return messageInstance;
         })
         .catch(() => {

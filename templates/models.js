@@ -33,35 +33,35 @@ class Models {
 
     static getById(id) {
         return db.one(`select * from database where id=${id}`)
-                    .then((data) => {
-                        const dataInstance = new Models(data.id, 
-                                                      data.first_name,
-                                                      data.last_name,
-                                                      data.username,
-                                                      data.password
-                                                     );
-                        return dataInstance;
-                    })
-                    .catch(() => {
-                        return null;
-                    })
+        .then((data) => {
+            const dataInstance = new Models(data.id, 
+                data.first_name,
+                data.last_name,
+                data.username,
+                data.password
+                );
+            return dataInstance;
+        })
+        .catch(() => {
+            return null;
+        })
     }
 
     //`model` keyword should be the database being referenced
     static getAll() {
         return db.any(`select * from models`)
-                .then((arrayOfModels => {
-                    return arrayOfModels.map((Data) => {
-                        const aModel = new Model(
-                                                Data.id, 
-                                                Data.first_name, 
-                                                Data.last_name, 
-                                                Data.email, 
-                                                Data.password);
-                        return aModel;
-                    })
-                })
-    }
+        .then((arrayOfModels => {
+        return arrayOfModels.map((Data) => {
+            const aModel = new Model(
+                Data.id, 
+                Data.first_name, 
+                Data.last_name, 
+                Data.email, 
+                Data.password);
+            return aModel;
+            })
+        })
+    )}
     save() {
         //This is used to add into the current database.
         //`databaseName` keyword to be replaced by database name

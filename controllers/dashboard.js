@@ -1,6 +1,6 @@
 const User = require('../models/users');
 const Message = require('../models/message_board');
-const fs = require('fs');
+
 
 
 
@@ -21,10 +21,12 @@ async function goToDashboard(req, res) {
             // });
 ///////////////////////////////////////////////////////////////////////////////////
 
+    const messageBoard = await Message.getMessage();
     const userData = await User.getById(req.session.user);
-    const messageBoard = await Message.getAll();
-    console.log(messageBoard);
-    // console.log(userData);
+
+    // console.log('====');
+    console.log('====',messageBoard);
+    // console.log('++++++++++',userData);
     res.render('dashboard', {
         locals: {
             greeting: `Welcome ${userData.username}!`,

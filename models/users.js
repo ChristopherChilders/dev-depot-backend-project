@@ -51,6 +51,7 @@ class User {
                 userData.username,
                 userData.password
             );
+            // console.log(userInstance);
             return userInstance;
         })
         .catch(()=>{
