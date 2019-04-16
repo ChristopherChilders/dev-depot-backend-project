@@ -22,7 +22,7 @@ async function goToDashboard(req, res) {
             // });
 ///////////////////////////////////////////////////////////////////////////////////
 
-    const messageBoard = await Message.getMessage();
+    const messageBoard = await Message.getAll();
     const userData = await User.getById(req.session.user);
 
     // console.log('====');
@@ -31,7 +31,18 @@ async function goToDashboard(req, res) {
     res.render('dashboard', {
         locals: {
             greeting: `Welcome ${userData.username}!`,
-            messages: messageBoard
+            message0: messageBoard[0].content,
+            user0: messageBoard[0].userId,
+            timestamp0: messageBoard[0].createdAt,
+            message1: messageBoard[1].content,
+            user1: messageBoard[1].userId,
+            timestamp1: messageBoard[1].createdAt,
+            message2: messageBoard[2].content,
+            user2: messageBoard[2].userId,
+            timestamp2: messageBoard[2].createdAt,
+            message3: messageBoard[3].content,
+            user3: messageBoard[3].userId,
+            timestamp3: messageBoard[3].createdAt
         }
     });
 }
