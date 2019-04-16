@@ -6,43 +6,54 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JSON Packages</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <h1 style="text-align: center;">JSON Packages</h1>
     <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
+            <ol class="breadcrumb" style="background-color: black;">
                 <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
                 <li class="breadcrumb-item"><a href="/frameworks">Frameworks</a></li>
                 <li class="breadcrumb-item"><a href="/json_packages" style="color: red;">JSON Packages</a></li>
                 <li class="breadcrumb-item"><a href="/login">Log-out</a></li>
             </ol>
         </nav>
-    <div>
-        <form action="/json_packages/tdd" method="GET">
-            <button>
-                Test Driven Development
-            </button>
-        </form>
-    </div>
-    <div>
-        <form action="/json_packages/nodemon" method="GET">
-            <button>
-                    Nodemon Developing 
+    
+    <div style="display:flex; justify-content: center;">
+        <div>
+            <form action="/json_packages/tdd" method="GET">
+                <button style="border-radius: 15px; background-color: black; color: white;">
+                    Test Driven Development
                 </button>
-        </form>
+            </form>
+        </div>
+        <div>
+            <form action="/json_packages/nodemon" method="GET">
+                <button style="border-radius: 15px; background-color: black; color: white;">
+                        Nodemon Developing 
+                    </button>
+            </form>
+        </div>
     </div>
-    <div>
-        <p>Package(s) Names</p>
-        ${name}
-    </div>
-    <div>
-        <p>Terminal Commands</p>
-            ${terminal}
-    </div>
-    <div>
-        <p>Optional Scripts</p>
-            ${scripts}
+
+    <div style="display: flex; justify-content: center; margin-top: 25px;">
+        <div style="margin-right: 25px; border: 2px solid white; padding: 5px;">
+            <p style="font-style: italic;">Package(s) Names</p>
+            ${name}
+        </div>
+        <div style="margin-right: 25px; border: 2px solid white; padding: 5px;">
+            <p style="font-style: italic;">Terminal Commands</p>
+                ${terminal}
+        </div>
+        <div style="border: 2px solid white; padding: 5px;">
+            <p style="font-style: italic;">Optional Scripts</p>
+                ${scripts}
+        </div>
     </div>
 </body>
 </html>
