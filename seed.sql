@@ -15,10 +15,10 @@ values
 insert into reviews
 (user_id, topic, content)
 VALUES
-(1, 'Website functionality', 'Your website is fantastic'),
-(2, 'Templates', 'I love how you format your templates to be easily inserted into a project'),
-(3, 'Naviagation', 'The way that you have made naviating your website is so easy. I always know where stuff is!'),
-(4, 'Awful stuff', 'i just want to complain because i am sad');
+(1, 'Website functionality', '"Your website is fantastic" - CSquared'),
+(2, 'Templates', '"I love how you format your templates to be easily inserted into a project" - Ryman'),
+(3, 'Naviagation', '"The way that you have made naviating your website is so easy. I always know where stuff is!" - VDog'),
+(4, 'Awful stuff', '"i just want to complain because i am sad" - JB');
 
 insert into favorites
 (user_id)

@@ -14,43 +14,54 @@
         .container {
 
         }
+
+        .jumbotron {
+            width: 50%;
+            margin-left: 25%;
+            border-radius: 15px;
+        }
     </style>
 </head>
 <body>
-        <h1 style="text-align: center; color: white;">DevDepot</h1>
-    <div class="container">
+        <h1 style="text-align: center; color: white; font-style: italic;">DevDepot</h1>
+        <h3 style="text-align: center; color: white; font-style: italic;">
+            The source for all your framework needs!
+        </h3>
+    <div style="">
         <form action="/login" style="text-align: center;">
-            <button style="border-radius: 15px;">Login</button>
+            <button style="border-radius: 15px; background-color: black; color: white;">Login</button>
         </form>
+    </div>
+    <div style="">
         <form action="/registration" style="text-align: center;">
-            <button style="border-radius: 15px;"">Registration</button>
+            <button style="border-radius: 15px; background-color: black; color: white;">Registration</button>
         </form>
     </div>
     <div>
 
 
-    <div class="jumbotron">
-        <h5>Reviews left by our users!</h5>
+    <div style="text-align: center; color: white; border-color:white; margin-top: 10px; margin-bottom: 10px; font-style: oblique;">
+        <a>Reviews left by our users!</a>
     </div>
 
     <div class="jumbotron">
-        <h5 class="display-15">${reviewTopic1}</h5>
-        <h1 class="display-50">${reviewContent1}</h1>
+        <h5 class="display-15" style="font-style: bold;">${reviewTopic1}</h5>
+        <h1 class="display-50" style="font-style: italic;">${reviewContent1}</h1>
     </div>
 
     <div class="jumbotron">
-        <h5 class="display-15">${reviewTopic2}</h5>
-        <h1 class="display-50">${reviewContent2}</h1>
+        <h5 class="display-15" style="font-style: bold;">${reviewTopic2}</h5>
+        <h1 class="display-50" style="font-style: italic;">${reviewContent2}</h1>
     </div>
 
     <div class="jumbotron">
-        <h5 class="display-15">${reviewTopic3}</h5>
-        <h1 class="display-50">${reviewContent3}</h1>
+        <h5 class="display-15" style="font-style: bold;">${reviewTopic3}</h5>
+        <h1 class="display-50" style="font-style: italic;">${reviewContent3}</h1>
     </div>
 
     <div class="jumbotron">
-        <h5 class="display-15">${reviewTopic4}</h5>
-        <h1 class="display-50">${reviewContent4}</h1>
+        <h5 class="display-15" style="font-style: bold;">${reviewTopic4}</h5>
+        <h1 class="display-50" style="font-style: italic;">${reviewContent4}</h1>
     </div>
 
 </body>
