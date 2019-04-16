@@ -50,14 +50,8 @@ app.use('/registration', registrationRouter);
 const packagesRouter = require('./routes/json_packages');
 app.use('/json_packages', packagesRouter);
 
-// app.get('/dashboard', (req, res) => {
-//     if (req.session.user) {
-//         console.log(`The user's id is: ${req.session.user}`);
-//         res.render('dashboard');
-//     } else {
-//         res.redirect('/login');
-//     }
-// });
+const homepageRouter = require('./routes/homepage');
+app.use('/', homepageRouter);
 
 
 app.listen(PORT, () => {
